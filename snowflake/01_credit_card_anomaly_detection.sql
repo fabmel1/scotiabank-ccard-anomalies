@@ -11,7 +11,7 @@ USE WAREHOUSE SCOTIABANK_WH;
 USE SCOTIABANK_DB;
 USE SCHEMA PUBLIC;
 
---Creating Transactions Table
+--Creating Transactions Table from scratch (last 3 days)
 CREATE OR REPLACE TABLE SCOTIABANK_TRANSACTIONS_ALBERTA AS
 WITH time_series AS (
     SELECT 
@@ -46,3 +46,5 @@ SELECT
     FALSE as no_label
 FROM expansion e
 CROSS JOIN catalogs c;
+
+SELECT * FROM SCOTIABANK_TRANSACTIONS_ALBERTA;
